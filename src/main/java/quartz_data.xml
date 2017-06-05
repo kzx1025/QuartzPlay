@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job-scheduling-data
+        xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd"
+        version="2.2.1">
+
+
+
+    <schedule>
+        <job>
+            <name>TestJob1</name>
+            <group>GROUP1</group>
+            <description>test plugin</description>
+            <job-class>plugin.PluginJob</job-class>
+        </job>
+
+
+        <trigger>
+            <simple>
+                <name>TestSimpleTrigger1</name>
+                <group>MYTRIGGER_GROUP</group>
+                <job-name>TestJob1</job-name>
+                <job-group>GROUP1</job-group>
+                <start-time-seconds-in-future>3</start-time-seconds-in-future>
+                <repeat-count>4</repeat-count> <!-- repeat indefinitely  -->
+                <repeat-interval>5</repeat-interval>  <!--  every 5 seconds -->
+            </simple>
+        </trigger>
+
+    </schedule>
+</job-scheduling-data>
